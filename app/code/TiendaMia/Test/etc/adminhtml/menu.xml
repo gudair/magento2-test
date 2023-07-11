@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @package  TiendaMia_Test
+ * @author   Gustavo Iribarne <giribarne@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="TiendaMia_Test::specialOfferSales"
+             title="Special Offer Sales"
+             module="TiendaMia_Test"
+             sortOrder="300" action="tm_test/specialoffersales"
+             parent="Magento_Sales::sales"
+             resource="TiendaMia_Test::specialOfferSales"/>
+
+        <add id="TiendaMia_Test::specialOfferSalesReport"
+             title="Special Offer Sales Report"
+             module="TiendaMia_Test"
+             sortOrder="400" action="tm_test/specialoffersales/report"
+             parent="Magento_Sales::sales"
+             resource="TiendaMia_Test::specialOfferSalesReport"/>
+    </menu>
+</config>

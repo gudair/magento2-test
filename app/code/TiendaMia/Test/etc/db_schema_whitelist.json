@@ -1,0 +1,28 @@
+{
+    "tm_special_offer_sales": {
+        "column": {
+            "id": true,
+            "order_id": true,
+            "product_sku": true,
+            "offer_id": true,
+            "seller": true,
+            "qty": true,
+            "price": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "tm_special_offer_sales_report": {
+        "column": {
+            "id": true,
+            "product_sku": true,
+            "qty": true,
+            "date": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

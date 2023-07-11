@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "sku": "24-MB01",
+      "offers": [
+        {
+          "id": 2,
+          "price": 23.00,
+          "stock": 10,
+          "shipping_price": 0.00,
+          "delivery_date": "2023-07-27",
+          "can_be_refunded": true,
+          "status": "new",
+          "guarantee": true,
+          "seller": {
+            "name": "seller1",
+            "qualification": 0,
+            "reviews_quantity": 0
+          }
+        },
+        {
+          "id": 7,
+          "price": 22.50,
+          "stock": 1,
+          "shipping_price": 0.00,
+          "delivery_date": "2023-07-27",
+          "can_be_refunded": true,
+          "status": "new",
+          "guarantee": true,
+          "seller": {
+            "name": "seller2",
+            "qualification": 0,
+            "reviews_quantity": 0
+          }
+        }
+      ]
+    },
+    {
+      "sku": "24-MB02",
+      "offers": [
+        {
+          "id": 2,
+          "price": 65.00,
+          "stock": 6,
+          "shipping_price": 0.00,
+          "delivery_date": "2023-07-27",
+          "can_be_refunded": true,
+          "status": "new",
+          "guarantee": true,
+          "seller": {
+            "name": "seller1",
+            "qualification": 0,
+            "reviews_quantity": 0
+          }
+        },
+        {
+          "id": 4,
+          "price": 55.00,
+          "stock": 2,
+          "shipping_price": 0.00,
+          "delivery_date": "2023-07-27",
+          "can_be_refunded": true,
+          "status": "new",
+          "guarantee": true,
+          "seller": {
+            "name": "seller2",
+            "qualification": 0,
+            "reviews_quantity": 0
+          }
+        }
+      ]
+    }
+  ]
+}

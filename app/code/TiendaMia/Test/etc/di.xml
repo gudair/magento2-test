@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @package  TiendaMia_Test
+ * @author   Gustavo Iribarne <giribarne@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <preference for="TiendaMia\Test\Api\MockSkuDataInterface" type="TiendaMia\Test\Model\MockSkuData"/>
+    <preference for="TiendaMia\Test\Api\RegisterSpecialOfferSaleInterface"
+                type="TiendaMia\Test\Model\RegisterSpecialOfferSale"/>
+    <preference for="TiendaMia\Test\Api\CheckSpecialPriceInterface"
+                type="TiendaMia\Test\Model\CheckSpecialPrice"/>
+
+    <preference for="TiendaMia\Test\Api\SpecialOfferRepositoryInterface"
+                type="TiendaMia\Test\Model\SpecialOfferRepository"/>
+    <preference for="TiendaMia\Test\Api\Data\SpecialOfferInterface"
+                type="TiendaMia\Test\Model\SpecialOffer"/>
+    <preference for="TiendaMia\Test\Api\Data\SpecialOfferSearchResultInterface"
+                type="TiendaMia\Test\Model\ResourceModel\SpecialOfferReport\SpecialOfferReportSearchResult"/>
+
+    <preference for="TiendaMia\Test\Api\SpecialOfferReportRepositoryInterface"
+                type="TiendaMia\Test\Model\SpecialOfferReportRepository"/>
+    <preference for="TiendaMia\Test\Api\Data\SpecialOfferReportInterface"
+                type="TiendaMia\Test\Model\SpecialOfferReport"/>
+    <preference for="TiendaMia\Test\Api\Data\SpecialOfferReportSearchResultInterface"
+                type="TiendaMia\Test\Model\ResourceModel\SpecialOfferReport\SpecialOfferReportSearchResult"/>
+
+    <type name="Magento\Catalog\Model\Product\Type">
+        <plugin name="check_special_offer" type="TiendaMia\Test\Plugin\BeforeFinalPriceBox" />
+    </type>
+
+    <type name="Magento\Sales\Api\OrderManagementInterface">
+        <plugin name="check_special_offer_before_place_order" type="TiendaMia\Test\Plugin\BeforePlaceOrder"/>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="tm_specialoffer_listing_data_source"
+                      xsi:type="string">TiendaMia\Test\Model\ResourceModel\SpecialOffer\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="TiendaMia\Test\Model\ResourceModel\SpecialOffer\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">tm_special_offer_sales</argument>
+            <argument name="eventPrefix" xsi:type="string">tm_special_offer_sales_collection</argument>
+            <argument name="eventObject" xsi:type="string">special_offer_sales_collection</argument>
+            <argument name="resourceModel" xsi:type="string">TiendaMia\Test\Model\ResourceModel\SpecialOffer</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="tm_specialofferreport_listing_data_source"
+                      xsi:type="string">TiendaMia\Test\Model\ResourceModel\SpecialOfferReport\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="TiendaMia\Test\Model\ResourceModel\SpecialOfferReport\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">tm_special_offer_sales_report</argument>
+            <argument name="eventPrefix" xsi:type="string">tm_special_offer_sales_report_collection</argument>
+            <argument name="eventObject" xsi:type="string">special_offer_sales_report_collection</argument>
+            <argument name="resourceModel" xsi:type="string">TiendaMia\Test\Model\ResourceModel\SpecialOfferReport</argument>
+        </arguments>
+    </type>
+
+</config>

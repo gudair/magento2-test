@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @package  TiendaMia_Test
+ * @author   Gustavo Iribarne <giribarne@gmail.com>
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="tm_special_offer_sales" resource="default" engine="innodb" comment="Special Offer Sales">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="int" name="order_id" nullable="false" comment="Order Id"/>
+        <column xsi:type="varchar" name="product_sku" nullable="false" comment="Product SKU"/>
+        <column xsi:type="int" name="offer_id" nullable="false" comment="Offer Id"/>
+        <column xsi:type="varchar" name="seller" nullable="false" length="255" comment="Seller Name"/>
+        <column xsi:type="int" name="qty" nullable="false" comment="Quantity"/>
+        <column xsi:type="decimal" name="price" nullable="false" comment="Price"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP"
+                on_update="false" comment="Date created entry"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+    <table name="tm_special_offer_sales_report" resource="default" engine="innodb" comment="Special Offer Sales Report">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="product_sku" nullable="false" comment="Product SKU"/>
+        <column xsi:type="int" name="qty" nullable="false" comment="Quantity"/>
+        <column xsi:type="timestamp" name="date" nullable="false" comment="Report Date"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

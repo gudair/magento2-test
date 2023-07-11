@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @package  TiendaMia_Test
+ * @author   Gustavo Iribarne <giribarne@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="tm_specialoffer_report" instance="TiendaMia\Test\Cron\SpecialOfferReport" method="execute">
+            <schedule>0 1 * * *</schedule>
+        </job>
+    </group>
+</config>
